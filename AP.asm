@@ -227,6 +227,7 @@ check_col_loop:
 	jne .next_col
 	cmp r9, r10
 	jne .next_col
+	ret
 .next_col:
 	inc rcx
 	cmp rcx, 3
@@ -241,6 +242,7 @@ winner:
 	syscall
 	jmp exit
 no_win:
+	mov r8, 0
 	ret
 
 exit:
